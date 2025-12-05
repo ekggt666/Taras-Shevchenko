@@ -1,0 +1,306 @@
+/* Скидання та базові стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.7;
+    color: #333;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* Фонове зображення + градієнт */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Taras_Shevchenko_monument_in_Kyiv.jpg/1920px-Taras_Shevchenko_monument_in_Kyiv.jpg') 
+                center/cover no-repeat;
+    opacity: 0.15;
+    z-index: -2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Заголовки */
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    color: #ffd700;
+    text-align: center;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+    margin: 30px 0;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #a8dadc;
+    font-style: italic;
+}
+
+.section-title {
+    font-family: 'Marck Script', cursive;
+    font-size: 3rem;
+    color: #ffd700;
+    text-align: center;
+    margin: 50px 0 30px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Header */
+.header {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    padding: 60px 0;
+    margin-bottom: 30px;
+}
+
+/* Marquee */
+.marquee-poem {
+    background: rgba(255,215,0,0.2);
+    color: gold;
+    font-size: 1.5rem;
+    padding: 15px 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px #000;
+    margin-bottom: 30px;
+}
+
+/* Блоки */
+.block {
+    background: rgba(255,255,255,0.1);
+    border: 3px solid #ffd700;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 25px 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.nested-example {
+    position: relative;
+}
+
+.inner-block {
+    background: rgba(0,0,0,0.4);
+    border: 2px dashed #a8dadc;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.inner-block img {
+    max-width: 100%;
+    border: 5px solid #ffd700;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.caption {
+    color: #a8dadc;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Вірш */
+.poem-block {
+    background: rgba(0,0,0,0.5);
+    border-left: 8px solid gold;
+    padding: 30px;
+    font-family: 'Georgia', serif;
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    white-space: pre-line;
+    border-radius: 0 15px 15px 0;
+    animation: fadeIn 2s ease-in;
+}
+
+/* Таблиця */
+.timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: rgba(255,255,255,0.1);
+}
+
+.timeline-table th, .timeline-table td {
+    border: 2px solid #ffd700;
+    padding: 15px;
+    text-align: left;
+}
+
+.timeline-table th {
+    background: rgba(255,215,0,0.3);
+    color: gold;
+    font-size: 1.3rem;
+}
+
+/* Галерея */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    border: 6px double #ffd700;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    transition: transform 0.4s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    color: #a8dadc;
+    font-weight: bold;
+}
+
+/* Відео */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border: 5px solid gold;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.4s;
+    font-size: 1.2rem;
+}
+
+.btn.primary {
+    background: linear-gradient(45deg, #ffd700, #ffb300);
+    color: #000;
+    box-shadow: 0 5px 15px rgba(255,215,0,0.6);
+}
+
+.btn.secondary {
+    background: linear-gradient(45deg, #0d47a1, #1976d2);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+/* Списки */
+.links-list {
+    list-style: none;
+    padding: 20px;
+}
+
+.links-list li {
+    margin: 15px 0;
+    font-size: 1.3rem;
+}
+
+.links-list a {
+    color: #a8dadc;
+    text-decoration: none;
+    border-bottom: 2px dotted #ffd700;
+    padding-bottom: 3px;
+    transition: color 0.3s;
+}
+
+.links-list a:hover {
+    color: #ffd700;
+}
+
+/* Вкладені блоки - демо */
+.outer-block, .middle-block, .inner-most-block {
+    padding: 30px;
+    margin: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.outer-block {
+    background: rgba(255,0,0,0.3);
+    border: 5px solid red;
+}
+
+.middle-block {
+    background: rgba(0,255,0,0.3);
+    border: 5px solid lime;
+}
+
+.inner-most-block {
+    background: rgba(0,0,255,0.5);
+    border: 5px solid #00fffc;
+}
+
+/* Анімації */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.animated-block {
+    animation: fadeIn 2s ease-out;
+}
+
+/* Підвал */
+.footer {
+    background: rgba(0,0,0,0.8);
+    color: #a8dadc;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 80px;
+    border-top: 3px solid gold;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .main-title { font-size: 3rem; }
+    .section-title { font-size: 2.2rem; }
+    .btn { display: block; margin: 10px auto; width: fit-content; }
+}
